@@ -1,0 +1,596 @@
+/* ++++++++++++++++
+
+*	****** QUICK SUMMERY ******
+
+	0.General
+
+	1.Variables
+
+	2.Default Components
+
+	3.User list
+
+	4.Navigation
+
+	5.Order Section
+
+	6.Sign up & Login
+
+	7.Welcome Message
+
+	+++++++++++++++++ */
+
+/* ++++++++++++++++
+
+	* 0. General
+
+   +++++++++++++++++ */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	background-color: var(--bg-dark);
+	color: var(--text-white);
+}
+
+/* ++++++++++++++++
+
+	* 1. Variables
+
+   +++++++++++++++++ */
+
+:root {
+	--text-white: hsl(0, 0%, 80%);
+	--text-blue: hsl(202, 100%, 60%);
+	--bg-dark: hsl(222, 40%, 9%);
+	--bg: hsl(218, 30%, 15%);
+	--bg-light: hsl(219, 30%, 25%);
+	--bg-lighter: hsl(219, 30%, 35%);
+	--bg-blue: hsl(202, 100%, 50%);
+	--transparent-blue: hsla(202, 100%, 50%, 0.3);
+	--bg-green: hsl(152, 100%, 30%);
+	--transparent-green: hsla(152, 100%, 30%, 0.4);
+	--bg-red: hsl(0, 100%, 35%);
+	--transparent-red: hsla(0, 100%, 35%, 0.4);
+	--transition: 0.2s all ease-in-out;
+}
+
+/* ++++++++++++++++
+
+	* 2. Default Components 
+
+   +++++++++++++++++ */
+
+.container {
+	background-color: var(--bg);
+	padding: 1em;
+	margin: 1em 2em;
+	border-radius: 10px;
+	max-width: 800px;
+}
+@media (min-width: 850px) {
+	.container {
+		margin: 1em auto;
+	}
+}
+.modal {
+	display: block; /* TODO: Change it to block to show the modal */
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-body {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--bg);
+	padding: 2em;
+	border-radius: 10px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+}
+.form-label {
+	margin: 1em 0;
+}
+.form-input {
+	color: var(--text-white);
+	border: 2px solid var(--bg-lighter);
+	border-radius: 5px;
+	padding: 0.5em;
+	margin: 0.5em 0;
+	width: 100%;
+	background: var(--bg-light);
+}
+
+.form-select {
+	width: 150px;
+}
+.form-submit {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	border: 2px solid var(--bg-blue);
+	border-radius: 5px;
+	background: var(--transparent-blue);
+	color: var(--text-white);
+	padding: 0.5em;
+	margin: 1em 0;
+	max-width: 100px;
+	transition: var(--transition);
+}
+.form-submit:hover {
+	background: var(--bg-blue);
+}
+
+/* ++++++++++++++++
+
+	* 3. User List
+
+	+++++++++++++++++ */
+
+.user-form {
+	margin: 0 2em;
+}
+
+.user-list {
+	background: var(--bg-light);
+	border-radius: 10px;
+	padding: 1em;
+	margin: 2em;
+}
+.user-list-items {
+	margin: 1em 0;
+}
+.user-title {
+	margin: 0.5em;
+	font-size: 1rem;
+	letter-spacing: 0.5px;
+}
+.user-input {
+	padding: 0.5em;
+	border-radius: 10px;
+	background-color: var(--bg);
+}
+.user-role {
+	color: var(--text-white);
+	border: 2px solid var(--bg-lighter);
+	width: 150px;
+	border-radius: 5px;
+	padding: 0.5em;
+	background: var(--bg);
+}
+
+.user-list-btn {
+	margin: 1em 0;
+}
+
+.user-update,
+.user-delete {
+	font-size: 1.1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 5px;
+	color: var(--text-white);
+	border: none;
+	padding: 0.5em;
+}
+
+.user-delete {
+	border: 2px solid var(--bg-red);
+	background: var(--transparent-red);
+	transition: var(--transition);
+}
+.user-delete:hover {
+	background: var(--bg-red);
+}
+.user-update {
+	margin-right: 0.5em;
+	background-color: var(--transparent-green);
+	border: 2px solid var(--bg-green);
+	transition: var(--transition);
+}
+.user-update:hover {
+	background: var(--bg-green);
+}
+/* ++++++++++++++++
+
+	* 4. Navigation
+
+	+++++++++++++++++ */
+
+nav {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-color: var(--bg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 0.5em;
+}
+
+.logo-container {
+	display: none;
+	color: var(--text-white);
+	text-transform: uppercase;
+	padding-right: 1em;
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin: 0.5em;
+	border-radius: 50px;
+	align-items: center;
+	height: 40px;
+	transition: var(--transition);
+}
+.logo-container:hover {
+	color: var(--bg-blue);
+	background-color: var(--transparent-blue);
+}
+.nav-section {
+	display: flex;
+	list-style-type: none;
+}
+.logo {
+	margin: 0 0.5em;
+	border-radius: 50%;
+	max-height: 80%;
+	transition: var(--transition);
+	border: 2px solid var(--bg-blue);
+}
+.logo:hover {
+	border-color: var(--text-blue);
+	filter: brightness(90%);
+}
+.nav-items,
+.logout {
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	border-radius: 5px;
+	display: block;
+	color: var(--text-blue);
+	padding: 0.8em;
+	margin: 0 0.2em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: var(--transition);
+}
+.nav-items {
+	height: 100%;
+}
+.nav-items:hover {
+	color: var(--text-white);
+	background-color: var(--bg-blue);
+}
+.logout {
+	color: var(--text-white);
+	background-color: var(--transparent-red);
+	padding: 0.5em;
+	border: 2px solid var(--bg-red);
+}
+.logout:hover {
+	background-color: var(--bg-red);
+}
+@media (min-width: 500px) {
+	.nav-container {
+		display: flex;
+		min-width: 100px;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.logo-container {
+		display: flex;
+	}
+	.logout,
+	.nav-items {
+		padding: 0.8em;
+	}
+}
+/* ++++++++++++++++
+
+	* 5.Order Section
+
+   +++++++++++++++++ */
+
+.order-section {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 2em;
+	max-width: 1100px;
+}
+.order-list,
+.order-creation {
+	padding: 2em;
+}
+.order-list {
+	width: 100%;
+	text-transform: capitalize;
+}
+.order-table {
+	margin-top: 2em;
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--bg-light);
+}
+th,
+td {
+	border: 2px solid var(--bg-lighter);
+	text-align: left;
+	padding: 1em;
+}
+
+tr:nth-child(even) {
+	background-color: var(--bg);
+}
+
+.order-creation {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+}
+.order-form {
+	width: 100%;
+	margin: 1em 0;
+}
+.order-form section {
+	display: flex;
+	flex-direction: column;
+}
+.order-form label {
+	margin: 0.5em 0;
+}
+.order-form input,
+.order-form textarea,
+.order-form select {
+	color: var(--text-white);
+	border: 2px solid var(--bg-lighter);
+	border-radius: 5px;
+	padding: 0.5em;
+	background: var(--bg-light);
+}
+.order-btn button {
+	padding: 0.5em;
+	font-weight: 600;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+.create-new-order {
+	color: var(--text-white);
+	background-color: var(--transparent-green);
+	border: 2px solid var(--bg-green);
+	transition: 0.2s all ease;
+}
+.create-new-order:hover {
+	color: var(--text-white);
+	background-color: var(--bg-green);
+}
+.update-order {
+	color: var(--text-white);
+	background-color: var(--transparent-blue);
+	border: 2px solid var(--bg-blue);
+	transition: 0.2s all ease;
+}
+.update-order:hover {
+	color: var(--text-white);
+	background-color: var(--bg-blue);
+}
+
+@media (min-width: 900px) {
+	.order-section {
+		margin: 2em auto;
+		align-items: flex-start;
+		flex-direction: row;
+		gap: 1em;
+	}
+	.order-list {
+		flex: 2;
+	}
+	.order-creation {
+		flex: 1;
+		align-items: flex-start;
+	}
+	.order-form {
+		display: flex;
+		justify-content: space-between;
+		gap: 2em;
+	}
+	.order-form section {
+		width: 100%;
+	}
+}
+
+.order-details {
+	display: none; /* TODO: set the prop to block to view */
+}
+.orders {
+	list-style-type: none;
+	transform: translate(-50%, -15%);
+	width: 85%;
+}
+.orders section {
+	width: 100%;
+}
+.order-title {
+	margin: 1em 0;
+	margin-top: 3em;
+}
+.order-input-value {
+	padding: 1em;
+	border-radius: 5px;
+	background-color: var(--bg-dark);
+}
+.order-close-btn {
+	position: absolute;
+	right: 3%;
+	top: 1%;
+	cursor: pointer;
+	color: var(--bg-red);
+	transition: var(--transition);
+	border: none;
+	background: none;
+	padding: 1em;
+}
+
+@media (min-width: 850px) {
+	.orders {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-evenly;
+		max-width: 900px;
+		transform: translate(-50%, -25%);
+	}
+	.orders section {
+		margin: 0 1em;
+	}
+}
+
+/* ++++++++++++++++
+
+	* 6. Sign up and login
+
+   +++++++++++++++++ */
+
+.login-section {
+	display: flex;
+	flex-direction: column;
+}
+.login-section img {
+	max-width: 250px;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+.login-section,
+.sign-up-section {
+	max-width: 850px;
+	margin: 2em;
+}
+.login-form,
+.sign-up-section {
+	text-align: center;
+}
+.login-form form,
+.sign-up-section form {
+	align-items: flex-start;
+}
+.login-form input,
+.sign-up-section input {
+	border: 2px solid var(--bg-blue);
+	background-color: var(--transparent-blue);
+}
+
+.login-form label,
+.sign-up-section label,
+.login-form a,
+.sign-up-section a {
+	color: var(--text-blue);
+}
+
+.login-btn,
+.sign-up-btn {
+	display: block;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	background: var(--bg-blue);
+	color: var(--text-white);
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0.4em 0.8em;
+	margin: 1em;
+}
+@media (min-width: 850px) {
+	.login-section {
+		margin: auto;
+		flex-direction: row;
+		align-items: center;
+		text-align: left;
+	}
+	.login-section img {
+		margin: 0 3em;
+	}
+	.login-form {
+		flex: 2;
+		text-align: center;
+	}
+	.login-form h1 {
+		font-size: 2.2rem;
+	}
+	.sign-up-section,
+	.login-section {
+		margin: 2em auto;
+	}
+}
+
+/* ++++++++++++++++
+
+	* 7. Welcome message
+
+   +++++++++++++++++ */
+
+.welcome-window {
+	display: none; /* TODO: Change it to block to show the modal */
+}
+
+.welcome-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	width: 60%;
+	height: 60%;
+}
+.welcome-body p {
+	margin-top: 2em;
+}
+
+/* ++++++++++++++++
+
+	* 8. Profile section
+
+   +++++++++++++++++ */
+
+.user-profile > * {
+	padding: 1em;
+	border-radius: 5px;
+	margin: 2em 1em;
+}
+.user-profile {
+	width: 50%;
+
+	background-color: var(--bg-light);
+}
+.user-profile * {
+	background-color: var(--bg);
+}
+.user-profile div {
+	display: flex;
+	align-items: center;
+}
+.user-profile-name > p,
+.user-profile-email > p {
+	margin-left: 1em;
+}
+.user-profile-role {
+	width: 9em;
+	padding: 0.8em;
+	text-align: center;
+}
