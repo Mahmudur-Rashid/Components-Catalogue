@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+			crossorigin="anonymous"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+
+		<!-- +++++++++++++
+			* NAVIGATION
+			+++++++++++++ -->
+
+		<nav>
+			<div class="nav-container">
+				<div class="logo-container">
+					<img class="logo" src="./assets/user.jpg" alt="Logo" />
+					<p>Name</p>
+				</div>
+				<ul class="nav-section">
+					<li>
+						<a class="nav-items" href="./profile.html">Profile</a>
+					</li>
+					<li>
+						<a class="nav-items" href="">link</a>
+					</li>
+				</ul>
+			</div>
+			
+			<a class="logout" href="">Logout</a>
+		</nav>
+
+		<!-- +++++++++++++
+			* SIGN UP & LOGIN
+			+++++++++++++ -->
+
+		<!-- sign up -->
+
+		<div class="container sign-up-section">
+			<h1>Sign up</h1>
+			<form class="form" method="POST">
+				<label class="form-label" for="Name">Name:</label>
+				<input
+					class="form-input"
+					name="Name"
+					type="text"
+					placeholder="Enter your Name"
+				/>
+				<label class="form-label" for="Email">Email:</label>
+				<input
+					class="form-input"
+					name="Email"
+					type="email"
+					placeholder="Enter your Email"
+				/>
+				<label class="form-label" for="Password">Password:</label>
+				<input
+					class="form-input"
+					name="Password"
+					type="password"
+					placeholder="Enter your Password"
+				/>
+				<label class="form-label" for="Confirm-Password"
+					>Confirm Password:</label
+				>
+				<input
+					class="form-input"
+					name="Confirm-Password"
+					type="password"
+					placeholder="Confirm Password"
+				/>
+			</form>
+			<a href="">Already Have an Account? Login Here</a>
+			<button class="sign-up-btn">Sign up</button>
+		</div>
+
+		<!-- login -->
+
+		<div class="container login-section">
+			<img class="login-page-logo" src="./Assets/user.jpg" alt="logo" />
+			<div class="login-form">
+				<h1>Login</h1>
+				<form class="form" method="POST">
+					<label class="form-label" for="Email">Email:</label>
+					<input
+						class="form-input"
+						name="Email"
+						type="email"
+						placeholder="Enter Your Email"
+					/>
+					<label class="form-label" for="Password">Password:</label>
+					<input
+						class="form-input"
+						name="Password"
+						type="password"
+						placeholder="Enter Your Password"
+					/>
+				</form>
+				<a href="">Don't Have an Account? Sign up Here</a>
+				<button class="login-btn">Login</button>
+			</div>
+		</div>
+
+		<!-- +++++++++++++
+			* WELCOME WINDOW
+			+++++++++++++ -->
+
+		<div class="welcome-window modal">
+			<div class="welcome-body modal-body">
+				<h1>WELCOME!</h1>
+				<p>
+					Please wait while the server owner gives you the permission
+					to access this page...
+				</p>
+			</div>
+		</div>
+
+		<!-- +++++++++++++
+			* ORDER DETAILS
+			+++++++++++++ -->
+
+		<div class="order-section">
+			<div class="container order-list">
+				<h2>Table content</h2>
+				<table class="order-table">
+					<tr>
+						<th>head</th>
+						<th>head</th>
+						<th>head</th>
+						<th>head</th>
+					</tr>
+					<tr>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+					</tr>
+					<tr>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+					</tr>
+					<tr>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+					</tr>
+					<tr>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+						<td>data</td>
+					</tr>
+				</table>
+			</div>
+			<div class="container order-creation">
+				<h2>Order now!</h2>
+				<form action="" class="order-form">
+					<section>
+						<label for="factory-name">Factory Name</label>
+						<input name="factory-name" type="text" />
+						<label for="order-details">Order Details</label>
+						<textarea
+							name="order-details"
+							placeholder="Write the details here"
+						></textarea>
+						<label for="production-status">Production Status</label>
+						<input name="production-status" type="text" />
+						<label for="knitting-status">Knitting Status</label>
+						<select name="knitting-status">
+							<option value="blank"></option>
+							<option value="value1">value1</option>
+							<option value="value2">value2</option>
+						</select>
+						<label for="attached-file">Attach your file</label>
+						<input name="attached-file" type="file" />
+						<label for="date">Date</label>
+						<input name="date" type="date" />
+					</section>
+					<section>
+						<label for="quantity">Quantity</label>
+						<input name="quantity" type="number" />
+						<label for="balance-goods">Balance Goods</label>
+						<input name="balance-goods" type="text" />
+						<label for="price">Price</label>
+						<input
+							name="price"
+							placeholder="Enter your price"
+							type="text"
+						/>
+						<label for="shipment-address">Shipment Address</label>
+						<input name="shipment-address" type="text" />
+						<label for="goods-handover-date"
+							>Goods Handover Date</label
+						>
+						<input name="goods-handover-date" type="date" />
+					</section>
+				</form>
+				<div class="order-btn">
+					<button class="create-new-order">Create New</button>
+					<button class="update-order">Update</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Hidden by default -->
+
+		<div class="modal order-details">
+			<ul class="modal-body orders">
+				<i class="order-close-btn fas fa-times fa-2x"></i>
+				<section>
+					<li>
+						<h3 class="order-title">Factory Name</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Order Details</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Production Status</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Knitting Status</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Attached File</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Date</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+				</section>
+				<section>
+					<li>
+						<h3 class="order-title">Quantity</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Balance Goods</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Price</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Shipment Address</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+					<li>
+						<h3 class="order-title">Goods Handover Date</h3>
+						<p class="order-input-value">N/A</p>
+					</li>
+				</section>
+			</ul>
+		</div>
+
+		<!-- +++++++++++++
+			* USER LIST
+			+++++++++++++ -->
+
+		<!-- User form -->
+
+		<div class="container">
+			<form action="" class="form user-form">
+				<label for="name" class="form-label">Name</label>
+				<input
+					type="text"
+					name="name"
+					placeholder="Enter your Name"
+					class="form-input"
+				/>
+				<label for="email" class="form-label">Email</label>
+				<input
+					type="email"
+					name="email"
+					placeholder="Enter your Email"
+					class="form-input"
+				/>
+				<label for="ID" class="form-label">Your ID</label>
+				<input
+					type="text"
+					name="ID"
+					placeholder="Enter your Employment ID"
+					class="form-input"
+				/>
+				<label for="role">Role</label>
+				<select class="form-select form-input" name="role">
+					<option class="form-option" value="blank"></option>
+					<option class="form-option" value="manager">Manager</option>
+					<option class="form-option" value="employee">
+						Employee
+					</option>
+				</select>
+				<input class="form-submit" type="submit" value="Save" />
+			</form>
+		</div>
+
+		<!-- User list -->
+
+		<div class="container">
+			<div class="user-list">
+				<div class="user-list-items">
+					<h3 class="user-title">ID :</h3>
+					<p class="user-input">N/A</p>
+				</div>
+				<div class="user-list-items">
+					<h3 class="user-title">Name :</h3>
+					<p class="user-input">N/A</p>
+				</div>
+				<div class="user-list-items">
+					<h3 class="user-title">Email :</h3>
+					<p class="user-input">N/A</p>
+				</div>
+				<div class="user-list-role">
+					<select class="user-role" name="role">
+						<option class="user-option" value="blank"></option>
+						<option class="user-option" value="manager">
+							Manager
+						</option>
+						<option class="user-option" value="employee">
+							Employee
+						</option>
+					</select>
+				</div>
+				<div class="user-list-btn">
+					<button class="user-update">Update</button>
+					<button class="user-delete">delete</button>
+				</div>
+			</div>
+			<div class="user-list">
+				<div class="user-list-items">
+					<h3 class="user-title">ID :</h3>
+					<p class="user-input">N/A</p>
+				</div>
+				<div class="user-list-items">
+					<h3 class="user-title">Name :</h3>
+					<p class="user-input">N/A</p>
+				</div>
+				<div class="user-list-items">
+					<h3 class="user-title">Email :</h3>
+					<p class="user-input">N/A</p>
+				</div>
+				<div class="user-list-role">
+					<select class="user-role" name="role">
+						<option class="user-option" value="blank"></option>
+						<option class="user-option" value="manager">
+							Manager
+						</option>
+						<option class="user-option" value="employee">
+							Employee
+						</option>
+					</select>
+				</div>
+				<div class="user-list-btn">
+					<button class="user-update">Update</button>
+					<button class="user-delete">delete</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Order list script -->
+
+		<script type="text/javascript">
+			let orderDetails = document.querySelector(".order-details");
+			let orderCloseBtn = document.querySelector(".order-close-btn");
+			orderCloseBtn.addEventListener("click", function () {
+				orderDetails.style.display = "none";
+			});
+		</script>
+	</body>
+</html>
